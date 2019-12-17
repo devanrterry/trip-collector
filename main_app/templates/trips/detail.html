@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Trip Details</h1>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ trip.city }}</span>
+        <p>Country: {{ trip.country }}</p>
+        <p>Description: {{ trip.description }}</p>
+        <p>Duration: {{ trip.duration }}</p>
+      </div>
+      <div class="card-action">
+        <a href="{% url 'trips_update' trip.id %}">Edit</a>
+        <a href="{% url 'trips_delete' trip.id %}">Delete</a>
+      </div>
+</div>
+
+{% endblock %}
