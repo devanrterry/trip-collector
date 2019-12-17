@@ -37,8 +37,6 @@ class TripCreate(CreateView):
 class TripUpdate(UpdateView):
   model = Trip
   fields = ['city', 'country', 'description', 'duration']
-  #added below because it wasn't redirecting and showed an error
-  success_url = '/trips/'
 
 class TripDelete(DeleteView):
   model = Trip
