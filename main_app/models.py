@@ -21,8 +21,8 @@ class Sight(models.Model):
 
   trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
 
-  def __str__(self):
-    # Nice method for obtaining the friendly value of a Field.choice
-    return f"{self.get_name_display()} on {self.date}"
+  # def __str__(self):
+  #   # Nice method for obtaining the friendly value of a Field.choice
+  #   return f"{self.get_name_display()} on {self.date}"
   
   
