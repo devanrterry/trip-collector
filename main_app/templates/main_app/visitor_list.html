@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Visitor List</h1>
+
+{% for visitor in visitor_list %}
+  <a href="{% url 'visitors_detail' visitor.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ visitor.name }}</span>
+            <p>Age: {{ visitor.age }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}

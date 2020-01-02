@@ -1,20 +1,8 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Trip
+from django.views.generic import ListView, DetailView
+from .models import Trip, Visitor
 from .forms import SightForm
-
-# class Trip:  
-#   def __init__(self, city, country, description, duration):
-#     self.city = city
-#     self.country = country
-#     self.description = description
-#     self.duration = duration
-
-# trips = [
-#   Trip('Porto', 'Portugal', 'quick getaway', 2),
-#   Trip('Mallorca', 'Spain', 'beach!', 2),
-#   Trip('Milan', 'Italy', 'stopover before Paris', 2)
-# ]
 
 def home(request):
     return render(request, 'home.html')
@@ -54,3 +42,21 @@ class TripUpdate(UpdateView):
 class TripDelete(DeleteView):
   model = Trip
   success_url = '/trips/'
+
+class VisitorList(ListView):
+  model = Visitor
+
+class VisitorDetail(DetailView):
+  model = Visitor
+
+class VisitorCreate(CreateView):
+  model = Visitor
+  fields = '__all__'
+
+class VisitorUpdate(UpdateView):
+  model = Visitor
+  fields = ['name', 'age']
+
+class VisitorDelete(DeleteView):
+  model = Visitor
+  success_url = '/visitors/'

@@ -3,6 +3,16 @@ from django.urls import reverse
 
 # Create your models here.
 
+class Visitor(models.Model):
+  name = models.CharField(max_length=50)
+  age = models.IntegerField()
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('visitors_detail', kwargs={'pk': self.id})
+
 class Trip(models.Model):
   city = models.CharField(max_length=100)
   country = models.CharField(max_length=100)
