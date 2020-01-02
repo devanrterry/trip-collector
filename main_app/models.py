@@ -18,6 +18,7 @@ class Trip(models.Model):
   country = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
   duration = models.IntegerField()
+  visitors = models.ManyToManyField(Visitor)
 
   def __str__(self):
     return self.city
