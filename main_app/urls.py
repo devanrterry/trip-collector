@@ -10,6 +10,7 @@ urlpatterns = [
     path('trips/<int:pk>/update/', views.TripUpdate.as_view(), name='trips_update'),
     path('trips/<int:pk>/delete/', views.TripDelete.as_view(), name='trips_delete'),
     path('trips/<int:trip_id>/add_sight/', views.add_sight, name='add_sight'),
+    path('trips/<int:trip_id>/assoc_visitor/<int:visitor_id>/', views.assoc_visitor, name='assoc_visitor'),
     path('visitors/', views.VisitorList.as_view(), name='visitors_index'),
     path('visitors/<int:pk>/', views.VisitorDetail.as_view(), name='visitors_detail'),
     path('visitors/create/', views.VisitorCreate.as_view(), name='visitors_create'),
